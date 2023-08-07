@@ -3,20 +3,21 @@ void main()
 {
     FILE *fp;
     int c=0;
-    char temp,ch;
+    char temp,ch,*p;
+    p=&temp;
     fp=fopen("file.txt","w+");
     printf("Enter the file contents :");
-    while((temp = getchar())!=EOF)
+    while((*p = getchar())!=EOF)
     {
-        putc(temp,fp);
+        putc(*p,fp);
     }
     rewind(fp);
     getchar();
     printf("Enter the character to search : ");
     scanf("%c",&ch);
-    while((temp = getc(fp))!=EOF)
+    while((*p = getc(fp))!=EOF)
     {
-        if(temp == ch)
+        if(*p == ch)
         {
             c++;
         }

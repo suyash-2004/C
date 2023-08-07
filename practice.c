@@ -1,22 +1,23 @@
-#include<stdio.h>
+ #include<stdio.h>
 #include<string.h>
 void main()
 {
     int i, j;
-    char a[50];
+    char a[50],*p;
 
     printf("Enter the string: ");
     fgets(a, 50, stdin);
 
     printf("Words starting with uppercase letters: ");
-
-    for (i = 0; a[i] != '\0'; i++)
+    p=a;
+    for (i = 0; *(p+i) != '\0'; i++)
     {
-        if (a[i]>='A' && a[i]<='Z')
+        if()
+        else if (*(p+i)>='A' && *(p+i)<='Z')
         {
-            for (j = i; a[j] != ' ' && a[j] != '\0'; j++)
+            for (j = i; *(p+j) != ' ' && *(p+j) != '\0'; j++)
             {
-                printf("%c", a[j]);
+                printf("%c", *(p+j));
             }
             printf(" ");
         }

@@ -1,23 +1,16 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
 void main()
 {
-    FILE *fp;
-    int n,i;
-    char temp;
-    fp = fopen("input.txt","w+");
-    printf("Enter limit : ");
-    scanf("%d",&n);
-    printf("Enter in the file : ");
-    for(i=0;i<n;i++)
+    char s[100];
+    int l,len;
+    strcpy(s,"triangle");
+    len=strlen(s);
+    char *p;
+    p=s;
+    for(l=0;*(p)!='\0';l++)
     {
-        scanf("%c",&temp);
-        putc(temp,fp);
+        printf("%c",*(++p));
     }
-    fseek(fp,-1,1);
-    while(ftell(fp)!=0)
-    {
-        printf("%c",getc(fp));
-        fseek(fp,-2,1);
-    }
-    fclose(fp);
+
 }
